@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+
+  body
+    .container
+
+      .header
+        .header-content
+          h1 Video Games
+          p Manage your video game records from HubSpot.
+
+        a.add-button(href="/update-cobj") + Add Video Game
+
+      .table-wrapper
+        table
+          thead
+            tr
+              th Name
+              th Publisher
+              th Price
+
+          tbody
+            each game in data
+              tr
+                td.game-name= game.properties.name
+                td= game.properties.publisher
+                td.price $#{game.properties.price}

@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+
+  body
+    .form-container
+      .form-card
+        h1 Add Video Game
+        p Create a new video game record in HubSpot.
+
+        form(action="/update-cobj" method="POST")
+
+          .form-group
+            label(for="name") Name
+            input(
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter game name"
+              required
+            )
+
+          .form-group
+            label(for="publisher") Publisher
+            input(
+              type="text"
+              id="publisher"
+              name="publisher"
+              placeholder="Enter publisher"
+              required
+            )
+
+          .form-group
+            label(for="price") Price
+            input(
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Enter price"
+              step="0.01"
+              required
+            )
+
+          button.submit-button(type="submit") Add Video Game
+
+        a.back-link(href="/") ← Back to Video Games
